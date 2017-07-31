@@ -11,14 +11,17 @@ hours=tonumber(os.date('%H',time))
 ------------------------------------------------------------------------
 if (minutes == 0) or (minutes == 30) then
 
-	print('# Lancement du check à '..hours..'h'..minutes)
+	print('Lancement du check à '..hours..'h'..minutes)
 
 	-- Renforcement des envois de signal
 	------------------------------------------------------------------------------
 	print('Check de tous les materiels rfxcom (sans retour d\'etat)');
 
 	local check = {
-		'Radiateur chambre bébé',
+		'Radiateur chambre bébé (matériel)',
+		'Radiateur salon (matériel)',
+		'Radiateur salle à manger  (matériel)',
+		'Radiateur salle de bain  (matériel)',
 		'Prise TV'
 	}
 

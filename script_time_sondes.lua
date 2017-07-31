@@ -9,7 +9,9 @@ minutes=tonumber(os.date('%M',time))
 if (minutes == 0) then
 
     local temp = {
-		'Température chambre bébé'
+		'Température chambre bébé',
+		'Température extérieure',
+		'Température salon'
 	}
 
     -- Delai au dela duquel on alerte en secondes

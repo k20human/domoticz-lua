@@ -10,7 +10,10 @@ function tableContains(table, element)
 end
 
 check = {
-	'Radiateur chambre bébé'
+	'Radiateur chambre bébé',
+	'Radiateur salle de bain',
+	'Radiateur salle à manger',
+	'Radiateur salon'
 }
 
 for deviceName, deviceValue in pairs(devicechanged) do
