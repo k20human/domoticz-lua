@@ -18,10 +18,10 @@ if (minutes == 0) or (minutes == 30) then
 	print('Check de tous les materiels rfxcom (sans retour d\'etat)');
 
 	local check = {
-		'Radiateur chambre bébé (matériel)',
-		'Radiateur salon (matériel)',
-		'Radiateur salle à manger (matériel)',
-		'Radiateur salle de bain (matériel)',
+		'Radiateur chambre bébé',
+		'Radiateur salon',
+		'Radiateur salle à manger',
+		'Radiateur salle de bain',
 		'Prise TV'
 	}
 
