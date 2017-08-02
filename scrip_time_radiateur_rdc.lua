@@ -42,9 +42,6 @@ minutes=tonumber(os.date('%M',time))
 if (minutes % 5 == 0) then
 	local temperature = tonumber(mySplit(otherdevices[sonde], ";")[0])
 	local thermostatValue = tonumber(otherdevices[thermostat])
-	
-	print(thermostatValue)
-	print(temperature)
 
 	-- Mode vacances
 	if (otherdevices['Vacances'] == 'On') then
