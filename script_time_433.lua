@@ -20,8 +20,8 @@ if (minutes == 0) or (minutes == 30) then
 	local check = {
 		'Radiateur chambre bébé (matériel)',
 		'Radiateur salon (matériel)',
-		'Radiateur salle à manger  (matériel)',
-		'Radiateur salle de bain  (matériel)',
+		'Radiateur salle à manger (matériel)',
+		'Radiateur salle de bain (matériel)',
 		'Prise TV'
 	}
 
