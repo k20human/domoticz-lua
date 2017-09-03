@@ -21,8 +21,7 @@ if (minutes == 0) or (minutes == 30) then
 		'Radiateur chambre bébé',
 		'Radiateur salon',
 		'Radiateur salle à manger',
-		'Radiateur salle de bain',
-		'Prise TV'
+		'Radiateur salle de bain'
 	}
 
 	-- Parcours le Tableau
