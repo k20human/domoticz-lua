@@ -1,3 +1,7 @@
+-- Lorsque le relais est en position 1 le chauffage est éteint
+-- Lorsque le relais est en position 0 le chauffage est en mode confort
+-- Ce script permet d'allumer ou éteindre le chauffage tout en affichant le vrai status du radiateur
+
 commandArray = {}
 
 function tableContains(table, element)

@@ -24,11 +24,11 @@ minutes = tonumber(os.date('%M',time))
 
 if (minutes % 5 == 0) then
 	-- Mode vacances
-	if (otherdevices['Vacances'] == 'On') then
+	if (otherdevices['Gestion radiateurs'] == 'Vacances') then
 		print('Off radiateur sdb vacances')
 		onOffHeat('Off')
 	-- Calendrier
-	elseif (otherdevices['Vacances'] == 'Off') then
+	elseif (otherdevices['Gestion radiateurs'] == 'On') then
 		if (otherdevices[calendrier] == 'On') then
 			print('On radiateur sdb calendrier')
 			onOffHeat('On')		

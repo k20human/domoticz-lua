@@ -4,7 +4,7 @@
 
 -- Variables
 
-local hysteresis = 0.5 --Valeur seuil pour éviter que le relai ne cesse de commuter dans les 2 sens
+local hysteresis = 0.5 -- Valeur seuil pour éviter que le relai ne cesse de commuter dans les 2 sens
 local sonde = 'Température salon'
 local thermostat = 'Thermostat salon'
 local calendrier = 'Calendrier chauffage rdc'
@@ -44,7 +44,7 @@ if (minutes % 5 == 0) then
 	local thermostatValue = tonumber(otherdevices[thermostat])
 
 	-- Mode vacances
-	if (otherdevices['Vacances'] == 'On') then
+	if (otherdevices['Gestion radiateurs'] == 'Vacances') then
 		if (temperature <= (tempVacs - hysteresis) ) then
 			print('On radiateur rdc vacances')
 			onOffHeat('On')
@@ -53,7 +53,7 @@ if (minutes % 5 == 0) then
 			onOffHeat('Off')
 		end
 	-- Mode forcé
-	elseif (otherdevices['Mode forcé radiateurs'] == 'On') then
+	elseif (otherdevices['Gestion radiateurs'] == 'Mode forcé') then
 		if (temperature <= (thermostatValue - hysteresis) ) then
 			print('On radiateur rdc mode forcé')
 			onOffHeat('On')
@@ -62,7 +62,7 @@ if (minutes % 5 == 0) then
 			onOffHeat('Off')
 		end
 	-- Calendrier
-	elseif (otherdevices['Vacances'] == 'Off') and (otherdevices['Mode forcé radiateurs'] == 'Off') then
+	elseif (otherdevices['Gestion radiateurs'] == 'On') then
 		if (otherdevices[calendrier] == 'On') then
 			if (temperature <= (thermostatValue - hysteresis) ) then
 				print('On radiateur rdc calendrier')
