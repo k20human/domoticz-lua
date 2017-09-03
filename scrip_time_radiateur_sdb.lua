@@ -36,7 +36,6 @@ if (minutes % 5 == 0) then
 			print('Off radiateur sdb calendrier')
 			onOffHeat('Off')
 		end
-	end
 	-- Off
 	elseif (otherdevices['Gestion radiateurs'] == 'Off') then
 	    print('Off radiateur sdb')
