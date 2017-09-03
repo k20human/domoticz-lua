@@ -37,6 +37,11 @@ if (minutes % 5 == 0) then
 			onOffHeat('Off')
 		end
 	end
+	-- Off
+	elseif (otherdevices['Gestion radiateurs'] == 'Off') then
+	    print('Off radiateur sdb')
+        onOffHeat('Off')
+	end
 end
 
 return commandArray

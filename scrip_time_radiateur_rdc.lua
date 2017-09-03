@@ -36,8 +36,8 @@ function mySplit(inputstr, sep)
 end
 
 -- Recupere les minutes
-time=os.time()
-minutes=tonumber(os.date('%M',time))
+time = os.time()
+minutes = tonumber(os.date('%M',time))
 
 if (minutes % 5 == 0) then
 	local temperature = tonumber(mySplit(otherdevices[sonde], ";")[0])
@@ -75,6 +75,10 @@ if (minutes % 5 == 0) then
 			print('Off radiateur rdc calendrier fin')
 			onOffHeat('Off')
 		end
+	-- Off
+	elseif (otherdevices['Gestion radiateurs'] == 'Off') then
+	    print('Off radiateur rdc')
+        onOffHeat('Off')
 	end
 end
 
