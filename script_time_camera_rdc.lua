@@ -4,7 +4,7 @@
 
 -- Variables
 
-local calendrier = 'Caméra rdc'
+local calendrier = 'Calendrier Caméra rdc'
 
 cameras = {
 	'cam_rdc'
