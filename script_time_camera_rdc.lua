@@ -4,10 +4,10 @@
 
 -- Variables
 
-local calendrier = 'Calendrier Caméra rdc'
+local calendrier = 'Calendrier caméra rdc'
 
 cameras = {
-	'cam_rdc'
+	'Caméra rdc'
 }
 
 commandArray = {}
@@ -26,15 +26,19 @@ if (minutes % 5 == 0) then
 	-- Sécurité off
 	if (otherdevices['Sécurité'] == 'Off') then
 		print('Off camera rdc')
-		onOffCamera('off')
+		onOffCamera('Off')
+	-- Mode absence
+	elseif (otherdevices['Sécurité'] == 'Absence') then
+		print('On camera rdc')
+		onOffCamera('On')
 	-- Calendrier
-	else
+	elseif (otherdevices['Sécurité'] == 'On') then
 		if (otherdevices[calendrier] == 'On') then
 			print('On camera rdc calendrier')
-			onOffCamera('on')
+			onOffCamera('On')
 		else
 			print('Off camera rdc calendrier')
-			onOffCamera('off')
+			onOffCamera('Off')
 		end
 	end
 end
