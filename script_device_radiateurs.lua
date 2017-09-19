@@ -2,16 +2,10 @@
 -- Lorsque le relais est en position 0 le chauffage est en mode confort
 -- Ce script permet d'allumer ou éteindre le chauffage tout en affichant le vrai status du radiateur
 
-commandArray = {}
+package.path = package.path .. ';' .. '/home/k20/domoticz/scripts/lua/?.lua'
+Library = require('Library')
 
-function tableContains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+commandArray = {}
 
 check = {
 	'Radiateur chambre bébé',
@@ -21,7 +15,7 @@ check = {
 }
 
 for deviceName, deviceValue in pairs(devicechanged) do
-	if tableContains(check, deviceName) then
+	if Library.tableContains(check, deviceName) then
 		print ("Device based event fired on '"..deviceName.."', value '"..tostring(deviceValue).."'");
 		
 		if deviceValue == 'On' then

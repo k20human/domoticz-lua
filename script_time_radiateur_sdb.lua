@@ -2,6 +2,9 @@
 -- Gestion des chauffages sdb
 -----------------------------------------
 
+package.path = package.path .. ';' .. '/home/k20/domoticz/scripts/lua/?.lua'
+Library = require('Library')
+
 -- Variables
 
 local calendrier = 'Calendrier chauffage sdb'
@@ -12,34 +15,23 @@ radiateurs = {
 
 commandArray = {}
 
-function onOffHeat(command)
-	for key, radiateur in pairs(radiateurs) do
-		commandArray[radiateur] = command
-	end
-end
-
 -- Recupere les minutes
-time = os.time()
-minutes = tonumber(os.date('%M',time))
+minutes = Library.getCurrentMinutes()
 
 if (minutes % 5 == 0) then
 	-- Mode vacances
 	if (otherdevices['Gestion radiateurs'] == 'Vacances') then
-		print('Off radiateur sdb vacances')
-		onOffHeat('Off')
+		Library.onOffDevices(radiateurs, 'On', 'vacances')
 	-- Calendrier
 	elseif (otherdevices['Gestion radiateurs'] == 'On') then
 		if (otherdevices[calendrier] == 'On') then
-			print('On radiateur sdb calendrier')
-			onOffHeat('On')		
+			Library.onOffDevices(radiateurs, 'On', 'calendrier')
 		else
-			print('Off radiateur sdb calendrier')
-			onOffHeat('Off')
+			Library.onOffDevices(radiateurs, 'Off', 'calendrier')
 		end
 	-- Off
 	elseif (otherdevices['Gestion radiateurs'] == 'Off') then
-	    print('Off radiateur sdb')
-        onOffHeat('Off')
+	    Library.onOffDevices(radiateurs, 'Off', '')
 	end
 end
 

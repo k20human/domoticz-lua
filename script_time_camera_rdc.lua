@@ -2,6 +2,9 @@
 -- Gestion de la caméra rdc
 -----------------------------------------
 
+package.path = package.path .. ';' .. '/home/k20/domoticz/scripts/lua/?.lua'
+Library = require('Library')
+
 -- Variables
 
 local calendrier = 'Calendrier caméra rdc'
@@ -12,33 +15,22 @@ cameras = {
 
 commandArray = {}
 
-function onOffCamera(command)
-	for key, camera in pairs(cameras) do
-		commandArray[camera] = command
-	end
-end
-
 -- Recupere les minutes
-time = os.time()
-minutes = tonumber(os.date('%M',time))
+minutes = Library.getCurrentMinutes()
 
 if (minutes % 5 == 0) then
 	-- Sécurité off
 	if (otherdevices['Sécurité'] == 'Off') then
-		print('Off camera rdc')
-		onOffCamera('Off')
+		Library.onOffDevices(cameras, 'Off', '')
 	-- Mode absence
 	elseif (otherdevices['Sécurité'] == 'Absence') then
-		print('On camera rdc')
-		onOffCamera('On')
+		Library.onOffDevices(cameras, 'On', '')
 	-- Calendrier
 	elseif (otherdevices['Sécurité'] == 'On') then
 		if (otherdevices[calendrier] == 'On') then
-			print('On camera rdc calendrier')
-			onOffCamera('On')
+			Library.onOffDevices(cameras, 'On', 'calendrier')
 		else
-			print('Off camera rdc calendrier')
-			onOffCamera('Off')
+			Library.onOffDevices(cameras, 'Off', 'calendrier')
 		end
 	end
 end

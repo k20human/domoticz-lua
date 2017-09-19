@@ -1,5 +1,4 @@
 local Library = {}
-local Json = (loadfile (Library.scriptPath() .. "/JSON.lua"))()
 
 function Library.scriptPath()
    local str = debug.getinfo(2, "S").source:sub(2)
@@ -7,6 +6,7 @@ function Library.scriptPath()
    return str:match("(.*/)") or "."
 end
 
+local Json = (loadfile (Library.scriptPath() .. "/JSON.lua"))()
 
 function Library.getUserVar(userVar)
     local var = uservariables[userVar]
@@ -124,9 +124,10 @@ function Library.tableContains(table, element)
     return false
 end
 
-function Library.onOffDevices(devices, command)
+function Library.onOffDevices(devices, command, message)
 	for key, device in pairs(devices) do
 		commandArray[device] = command
+        print(command .. ' ' .. device .. ' ' .. message)
 	end
 end
 

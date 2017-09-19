@@ -1,15 +1,19 @@
+-----------------------------------------
 -- Une fois par heure, verifie l'age des mesures des sondes
+-----------------------------------------
+
+package.path = package.path .. ';' .. '/home/k20/domoticz/scripts/lua/?.lua'
+Library = require('Library')
 
 commandArray = {}
 
 -- Recupere les minutes
-time=os.time()
-minutes=tonumber(os.date('%M',time))
+minutes = Library.getCurrentMinutes()
 
 if (minutes == 0) then
 
     local temp = {
-		'Température chambre bébé',
+		'Température chambre parents',
 		'Température extérieure',
 		'Température salon'
 	}
@@ -17,7 +21,7 @@ if (minutes == 0) then
     -- Delai au dela duquel on alerte en secondes
     local alerte = 3600
 
-    local emailTitle = '[Domoticz] Alerte sur sonde temperature#'
+    local emailTitle = '[Domoticz] Alerte sur sonde temperature'
 	local mail = ''
     local trigger = 0
 
@@ -48,6 +52,6 @@ if (minutes == 0) then
 	end
 	
 	if trigger > 0 then
-		commandArray['SendEmail'] = emailTitle .. "Alerte âge sonde temperature<br/><br/>Attention aux sondes suivantes :<br/><br/>" .. mail .. '#k20human@gmail.com'
+		Library.sendEmail(emailTitle, "Alerte âge sonde temperature<br/><br/>Attention aux sondes suivantes :<br/><br/>" .. mail)
 	end
 end
