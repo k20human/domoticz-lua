@@ -18,7 +18,7 @@ for deviceName, deviceValue in pairs(devicechanged) do
 	if deviceName == detection and deviceValue == 'On' and uservariables[detectionAlarm] == 0 then
 		commandArray['Variable:' .. detectionAlarm] = "1"
 		commandArray['Scene:Intrusion'] = "On"
-		print('ALERTE - Activation alarme')
+		print('ALRME ALERTE - Activation alarme')
 	end
 end
 
