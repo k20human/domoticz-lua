@@ -10,13 +10,6 @@ Library = require('Library')
 local detection = 'Detection'
 local detectionAlarm = 'DetectionAlarm'
 
-local groups = {
-	'Warning alarme',
-	'Désactivation alarme',
-	'Activation alarme',
-	'Intrusion'
-}
-
 commandArray = {}
 
 -- Activation du système d'alarme

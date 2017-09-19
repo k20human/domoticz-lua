@@ -21,20 +21,13 @@ local portes = {
 	'Porte entrée'
 }
 
-local groups = {
-	'Warning alarme',
-	'Désactivation alarme',
-	'Activation alarme',
-	'Intrusion'
-}
-
 commandArray = {}
 
 for deviceName, deviceValue in pairs(devicechanged) do
 	-- Si un des appareils passe à On en mode absence on active la détection
 	if (otherdevices[security] == 'Absence') then
 		if Library.tableContains(presence, deviceName) or Library.tableContains(portes, deviceName) then
-			if deviceValue == 'On' and uservariables[detectionActivate] == 0 then
+			if (deviceValue == 'On' or deviceValue == 'Open') and (uservariables[detectionActivate] == 0) then
 				print('ALARME ALERTE - Détection présence ' .. deviceName)
 
 				Library.addToCommand('Variable:' .. detectionActivate, "1")
