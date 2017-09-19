@@ -59,7 +59,8 @@ for deviceName, deviceValue in pairs(devicechanged) do
 
 		Library.addToCommand(detection, "Off")
 		Library.addToCommand('Variable:' .. detectionAlarm, "0")
-		Library.addToCommand('Variable:' .. detectionActivate, "0")
+		Library.addToCommand('Variable:' .. detectionActivate, "1")
+		Library.addToCommand('Variable:' .. detectionActivate, "0 AFTER 120")
 
 		-- Gestion des groupes
 		Library.addToCommand('Group:Activation alarme', 'On')
