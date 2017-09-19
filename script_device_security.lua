@@ -9,7 +9,7 @@ Library = require('Library')
 
 local security = 'Sécurité'
 local detection = 'Detection'
-local detectionAlready = 'DetectionAlready'
+local detectionAlarm = 'DetectionAlarm'
 
 local presence = {
 	'Présence rdc'
@@ -29,22 +29,22 @@ for deviceName, deviceValue in pairs(devicechanged) do
 			if deviceValue == 'On' then
 				print('ALERTE - Détection présence ' .. deviceName)
 				commandArray['Scene:Warning alarme'] = "On"
-				commandArray['Variable:' .. detection] = "1 AFTER 30"
+				commandArray[detection] = "On AFTER 30"
 			end
 		end
 	end
 
 	-- Si on désactive la sécurité on désactive la détection
 	if (deviceName == security) and (deviceValue ~= 'Absence') then
-		commandArray['Variable:' .. detection] = "0"
-		commandArray['Variable:' .. detectionAlready] = "0"
+		commandArray[detection] = "Off"
+		commandArray['Variable:' .. detectionAlarm] = "0"
 		commandArray['Scene:Désactivation alarme'] = "On"
 	end
 
 	-- Lampe absence
 	if (deviceName == security) and (deviceValue == 'Absence') then
-		commandArray['Variable:' .. detection] = "0"
-		commandArray['Variable:' .. detectionAlready] = "0"
+		commandArray[detection] = "Off"
+		commandArray['Variable:' .. detectionAlarm] = "0"
 		commandArray['Scene:Activation alarme'] = "On"
 	end
 end
