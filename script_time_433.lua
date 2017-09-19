@@ -9,15 +9,9 @@ commandArray = {}
 minutes = Library.getCurrentMinutes()
 
 -- Toutes les 30 minutes
-------------------------------------------------------------------------
 if (minutes == 0) or (minutes == 30) then
 
-	print('Lancement du check à ' .. hours .. 'h' .. minutes)
-
 	-- Renforcement des envois de signal
-	------------------------------------------------------------------------------
-	print('Check de tous les materiels Rflink (sans retour d\'etat)');
-
 	local check = {
 		'Radiateur chambre bébé',
 		'Radiateur salon',
