@@ -16,13 +16,8 @@ commandArray = {}
 -- Activation du système d'alarme
 if uservariables[detection] == 1 and uservariables[detectionAlready] == 0 then
 	commandArray['Variable:' .. detectionAlready] = "1"
+	commandArray['Scene:Intrusion'] = "On"
 	print('ALERTE - Activation alarme')
-end
-
--- Désactivation du système d'alarme
-if uservariables[detection] == 0 and uservariables[detectionAlready] == 1 then
-	commandArray['Variable:' .. detectionAlready] = "0"
-	print('FIN ALERTE - Désactivation alarme')
 end
 
 return commandArray
