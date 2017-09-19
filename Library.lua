@@ -124,6 +124,12 @@ function Library.tableContains(table, element)
     return false
 end
 
+function Library.disableGroups(scenes)
+    for _, value in pairs(scenes) do
+        commandArray['Group:' .. value] = "Off"
+    end
+end
+
 function Library.onOffDevices(devices, command, message)
 	for key, device in pairs(devices) do
 		commandArray[device] = command
