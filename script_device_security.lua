@@ -26,10 +26,10 @@ for deviceName, deviceValue in pairs(devicechanged) do
 	-- Si un des appareils passe à On en mode absence on active la détection
 	if (otherdevices[security] == 'Absence') then
 		if Library.tableContains(presence, deviceName) or Library.tableContains(portes, deviceName) then
-			if deviceValue == 'On' then
+			if deviceValue == 'On' and uservariables[detectionAlarm] == 0 then
 				print('ALERTE - Détection présence ' .. deviceName)
 				commandArray['Scene:Warning alarme'] = "On"
-				commandArray[detection] = "On AFTER 30"
+				commandArray[detection] = "On AFTER 10"
 			end
 		end
 	end
