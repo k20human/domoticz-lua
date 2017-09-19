@@ -124,6 +124,10 @@ function Library.tableContains(table, element)
     return false
 end
 
+function Library.addToCommand(device, command)
+    commandArray[#commandArray +1] = { [device] = command}
+end
+
 function Library.disableGroups(scenes)
     for _, value in pairs(scenes) do
         commandArray['Group:' .. value] = "Off"
@@ -160,7 +164,7 @@ function Library.sendEmail(title, body)
         local file = io.open(path .. '/config.json', "r")
         local contents = Json:decode(file:read( "*a" ))
 
-        commandArray['SendEmail'] = title .. '#' .. body .. '#' .. contents.email
+        commandArray[#commandArray +1] = { ['SendEmail'] = title .. '#' .. body .. '#' .. contents.email }
 
         io.close(file)
     else

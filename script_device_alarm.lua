@@ -24,12 +24,12 @@ for deviceName, deviceValue in pairs(devicechanged) do
 	if deviceName == detection and deviceValue == 'On' and uservariables[detectionAlarm] == 0 then
 		print('ALRME ALERTE - Activation alarme')
 
-		commandArray['Variable:' .. detectionAlarm] = "1"
+		Library.addToCommand('Variable:' .. detectionAlarm, '1')
 		Library.sendEmail('[Domoticz] Intrusion détectée', "Alerte")
 
 		-- Gestion des groupes
-		commandArray['Group:Intrusion'] = "On"
-		commandArray['Group:Intrusion'] = "Off AFTER 30"
+		Library.addToCommand('Group:Intrusion', 'On')
+		Library.addToCommand('Group:Intrusion', 'Off AFTER 30')
 	end
 end
 

@@ -37,12 +37,12 @@ for deviceName, deviceValue in pairs(devicechanged) do
 			if deviceValue == 'On' and uservariables[detectionActivate] == 0 then
 				print('ALARME ALERTE - Détection présence ' .. deviceName)
 
-				commandArray['Variable:' .. detectionActivate] = "1"
-				commandArray[detection] = "On AFTER 10"
+				Library.addToCommand('Variable:' .. detectionActivate, "1")
+				Library.addToCommand(detection, "On AFTER 10")
 
 				-- Gestion des groupes
-				commandArray['Group:Warning alarme'] = "On"
-				commandArray['Group:Warning alarme'] = "Off AFTER 10"
+				Library.addToCommand('Group:Warning alarme', 'On')
+				Library.addToCommand('Group:Warning alarme', 'Off AFTER 10')
 			end
 		end
 	end
@@ -51,26 +51,26 @@ for deviceName, deviceValue in pairs(devicechanged) do
 	if (deviceName == security) and (deviceValue ~= 'Absence') then
 		print('ALARME - Désactivation')
 
-		commandArray[detection] = "Off"
-		commandArray['Variable:' .. detectionAlarm] = "0"
-		commandArray['Variable:' .. detectionActivate] = "0"
+		Library.addToCommand(detection, "Off")
+		Library.addToCommand('Variable:' .. detectionAlarm, "0")
+		Library.addToCommand('Variable:' .. detectionActivate, "0")
 
 		-- Gestion des groupes
-		commandArray['Group:Désactivation alarme'] = "On"
-		commandArray['Group:Désactivation alarme'] = "Off AFTER 10"
+		Library.addToCommand('Group:Désactivation alarme', 'On')
+		Library.addToCommand('Group:Désactivation alarme', 'Off AFTER 10')
 	end
 
 	-- Lampe absence
 	if (deviceName == security) and (deviceValue == 'Absence') then
 		print('ALARME - Activation')
 
-		commandArray[detection] = "Off"
-		commandArray['Variable:' .. detectionAlarm] = "0"
-		commandArray['Variable:' .. detectionActivate] = "0"
+		Library.addToCommand(detection, "Off")
+		Library.addToCommand('Variable:' .. detectionAlarm, "0")
+		Library.addToCommand('Variable:' .. detectionActivate, "0")
 
 		-- Gestion des groupes
-		commandArray['Group:Activation alarme'] = "On"
-		commandArray['Group:Activation alarme'] = "Off AFTER 10"
+		Library.addToCommand('Group:Activation alarme', 'On')
+		Library.addToCommand('Group:Activation alarme', 'Off AFTER 10')
 	end
 end
 
