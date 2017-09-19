@@ -41,7 +41,6 @@ for deviceName, deviceValue in pairs(devicechanged) do
 				commandArray[detection] = "On AFTER 10"
 
 				-- Gestion des groupes
-				Library.disableGroups(groups)
 				commandArray['Group:Warning alarme'] = "On"
 				commandArray['Group:Warning alarme'] = "Off AFTER 10"
 			end
@@ -57,7 +56,6 @@ for deviceName, deviceValue in pairs(devicechanged) do
 		commandArray['Variable:' .. detectionActivate] = "0"
 
 		-- Gestion des groupes
-		Library.disableGroups(groups)
 		commandArray['Group:Désactivation alarme'] = "On"
 		commandArray['Group:Désactivation alarme'] = "Off AFTER 10"
 	end
@@ -71,7 +69,6 @@ for deviceName, deviceValue in pairs(devicechanged) do
 		commandArray['Variable:' .. detectionActivate] = "0"
 
 		-- Gestion des groupes
-		Library.disableGroups(groups)
 		commandArray['Group:Activation alarme'] = "On"
 		commandArray['Group:Activation alarme'] = "Off AFTER 10"
 	end

@@ -28,7 +28,6 @@ for deviceName, deviceValue in pairs(devicechanged) do
 		Library.sendEmail('[Domoticz] Intrusion détectée', "Alerte")
 
 		-- Gestion des groupes
-		Library.disableGroups(groups)
 		commandArray['Group:Intrusion'] = "On"
 		commandArray['Group:Intrusion'] = "Off AFTER 30"
 	end
