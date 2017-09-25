@@ -19,7 +19,7 @@ for deviceName, deviceValue in pairs(devicechanged) do
 		print('ALRME ALERTE - Activation alarme')
 
 		Library.addToCommand('Variable:' .. detectionAlarm, '1')
-		Library.addToCommand(alarme, 'Set Level 10')
+		Library.addToCommand(alarme, 'Set Level: 10')
 		Library.sendEmail('[Domoticz] Intrusion détectée', "Alerte")
 
 		-- Gestion des groupes
