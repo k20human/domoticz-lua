@@ -11,6 +11,7 @@ local security = 'Sécurité'
 local detection = 'Detection'
 local detectionAlarm = 'DetectionAlarm'
 local detectionActivate = 'DetectionActivate'
+local alarme = 'Alarme'
 
 local presence = {
 	'Présence rdc'
@@ -45,6 +46,7 @@ for deviceName, deviceValue in pairs(devicechanged) do
 		print('ALARME - Désactivation')
 
 		Library.addToCommand(detection, "Off")
+		Library.addToCommand(alarme, 'Set Level 0')
 		Library.addToCommand('Variable:' .. detectionAlarm, "0")
 		Library.addToCommand('Variable:' .. detectionActivate, "0")
 
@@ -58,6 +60,7 @@ for deviceName, deviceValue in pairs(devicechanged) do
 		print('ALARME - Activation')
 
 		Library.addToCommand(detection, "Off")
+		Library.addToCommand(alarme, 'Set Level 0')
 		Library.addToCommand('Variable:' .. detectionAlarm, "0")
 		Library.addToCommand('Variable:' .. detectionActivate, "1")
 		Library.addToCommand('Variable:' .. detectionActivate, "0 AFTER 120")
