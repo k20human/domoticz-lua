@@ -7,9 +7,10 @@ Library = require('Library')
 
 -- Variables
 
-local detection = 'Detection'
+local detection = 'Détection présence'
 local detectionAlarm = 'DetectionAlarm'
 local alarme = 'Alarme'
+local volume = 'Xiaomi Gateway Volume'
 
 commandArray = {}
 
@@ -20,6 +21,7 @@ for deviceName, deviceValue in pairs(devicechanged) do
 
 		Library.addToCommand('Variable:' .. detectionAlarm, '1')
 		Library.addToCommand(alarme, 'Set Level: 10')
+		Library.addToCommand(volume, 'Set Level 100')
 		Library.sendEmail('[Domoticz] Intrusion détectée', "Alerte")
 
 		-- Gestion des groupes

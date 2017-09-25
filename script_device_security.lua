@@ -8,10 +8,11 @@ Library = require('Library')
 -- Variables
 
 local security = 'Sécurité'
-local detection = 'Detection'
+local detection = 'Détection présence'
 local detectionAlarm = 'DetectionAlarm'
 local detectionActivate = 'DetectionActivate'
 local alarme = 'Alarme'
+local volume = 'Xiaomi Gateway Volume'
 
 local presence = {
 	'Présence rdc'
