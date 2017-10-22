@@ -8,7 +8,7 @@ Library = require('Library')
 commandArray = {}
 
 check = {
-	'Radiateur chambre bébé',
+	'Radiateur chambre Théa',
 	'Radiateur salle de bain',
 	'Radiateur salle à manger',
 	'Radiateur salon'
@@ -16,7 +16,7 @@ check = {
 
 for deviceName, deviceValue in pairs(devicechanged) do
 	if Library.tableContains(check, deviceName) then
-		print ("Device based event fired on '"..deviceName.."', value '"..tostring(deviceValue).."'");
+		print ("Device based event fired on '" .. deviceName .. "', value '" .. tostring(deviceValue) .. "'");
 		
 		if deviceValue == 'On' then
 			commandArray[deviceName .. ' (matériel)'] = 'Off'

@@ -1,4 +1,4 @@
--- Permet toutes les 30 minutes de renvoyer la commande actuelle sensée etre appliquée aux modules en 433 ( sans retour d'etat )
+-- Permet toutes les 5 minutes de renvoyer la commande actuelle sensée etre appliquée aux modules en 433 ( sans retour d'etat )
 
 package.path = package.path .. ';' .. '/home/k20/domoticz/scripts/lua/?.lua'
 Library = require('Library')
@@ -8,12 +8,12 @@ commandArray = {}
 -- Recupère les minutes
 minutes = Library.getCurrentMinutes()
 
--- Toutes les 30 minutes
-if (minutes == 0) or (minutes == 30) then
+-- Toutes les 5 minutes
+if (minutes == 0) or (minutes == 5) then
 
 	-- Renforcement des envois de signal
 	local check = {
-		'Radiateur chambre bébé',
+		'Radiateur chambre Théa',
 		'Radiateur salon',
 		'Radiateur salle à manger',
 		'Radiateur salle de bain'
