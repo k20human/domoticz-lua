@@ -7,7 +7,7 @@ Library = require('Library')
 
 -- Variables
 
-local hysteresis = 1 -- Valeur seuil pour éviter que le relai ne cesse de commuter dans les 2 sens
+local hysteresis = 0.5 -- Valeur seuil pour éviter que le relai ne cesse de commuter dans les 2 sens
 local sonde = 'Température chambre Théa'
 local thermostat = 'Thermostat chambre Théa'
 local calendrier = 'Calendrier chauffage chambre Théa'
