@@ -23,7 +23,7 @@ zones = {
 		'Radiateur salle à manger'
 	},
 	['chambre parents'] = {'Radiateur chambre parents'},
-	['bureau'] = {'Radiateur bureau'},
+	['bureau'] = {'Radiateur bureau'}
 }
 
 commandArray = {}
