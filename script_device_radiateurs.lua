@@ -11,7 +11,9 @@ check = {
 	'Radiateur chambre Théa',
 	'Radiateur salle de bain',
 	'Radiateur salle à manger',
-	'Radiateur salon'
+	'Radiateur salon',
+	'Radiateur chambre parents'
+	'Radiateur bureau'
 }
 
 for deviceName, deviceValue in pairs(devicechanged) do
