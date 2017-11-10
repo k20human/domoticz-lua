@@ -8,7 +8,8 @@ Library = require('Library')
 -- Variables
 
 local hysteresis = 0.5 -- Valeur seuil pour éviter que le relai ne cesse de commuter dans les 2 sens
-local tempVacs = 10
+local tempVacs = tonumber(otherdevices['Thermostat hors gel'])
+local tempMin = tonumber(otherdevices['Thermostat minimum'])
 
 local sonde = 'Température '
 local thermostat = 'Thermostat '
@@ -53,7 +54,7 @@ if (minutes % 5 == 0) then
 			elseif (temperature >= (thermostatValue + hysteresis) ) then
 				Library.onOffDevices(radiateurs, 'Off', 'mode forcé')
 			end
-		-- Calendrier
+		-- Gestion normale
 		elseif (otherdevices[management .. zone] == 'On') then
 			if (otherdevices[calendrier .. zone] == 'On') then
 				if (temperature <= (thermostatValue - hysteresis) ) then
@@ -62,7 +63,12 @@ if (minutes % 5 == 0) then
 					Library.onOffDevices(radiateurs, 'Off', 'calendrier')
 				end
 			else
-				Library.onOffDevices(radiateurs, 'Off', 'calendrier fin')
+				-- Si température trop faible on lance quand même le chauffage
+				if (temperature <= (tempMin - hysteresis) ) then
+					Library.onOffDevices(radiateurs, 'On', 'minimum')
+				elseif (temperature >= (tempMin + hysteresis) ) then
+					Library.onOffDevices(radiateurs, 'Off', 'minimum / calendrier fin')
+				end
 			end
 		-- Off
 		elseif (otherdevices[management .. zone] == 'Off') then

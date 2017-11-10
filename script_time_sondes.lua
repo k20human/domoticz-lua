@@ -18,8 +18,8 @@ if (minutes == 0) then
 		'Température bureau'
 	}
 
-    -- Delai au dela duquel on alerte en secondes
-    local alerte = 3600
+    -- Delai au dela duquel on alerte en secondes - 24h
+    local alerte = 86400
 
     local emailTitle = '[Domoticz] Alerte sur sonde temperature'
 	local mail = ''
