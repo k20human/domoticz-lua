@@ -54,6 +54,9 @@ if (minutes % 5 == 0) then
 			elseif (temperature >= (thermostatValue + hysteresis) ) then
 				Library.onOffDevices(radiateurs, 'Off', 'mode forcé')
 			end
+		-- Gestion spécifique serviettes
+		elseif (otherdevices[management .. zone] == 'Serviettes') then
+			Library.onOffDevices(radiateurs, 'On', 'serviettes')
 		-- Gestion normale
 		elseif (otherdevices[management .. zone] == 'On') then
 			if (otherdevices[calendrier .. zone] == 'On') then
