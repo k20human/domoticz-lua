@@ -17,10 +17,10 @@ end
 print(beaconHome .. ' Nut à la maison')
 
 if otherdevices[security] == 'Absence' and beaconHome >= 1 then -- switch Off Alarm because 1 beacon come back Home
-    Library.addToCommand(security, "On")
+    Library.addToCommand(security, "Set Level: 0")
     print('Auto désactivation alarme')
 elseif otherdevices[security] ~= 'Absence' and beaconHome == 0 then -- switch On Alarm because all beacon are away
-    Library.addToCommand(security, "Absence")
+    Library.addToCommand(security, "Set Level: 10")
     print('Auto activation alarme')
 end
 
