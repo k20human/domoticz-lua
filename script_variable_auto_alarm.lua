@@ -1,7 +1,10 @@
-commandArray = {}
+package.path = package.path .. ';' .. '/home/k20/domoticz/scripts/lua/?.lua'
+Library = require('Library')
 
-beaconHome = 0
-security = 'Sécurité'
+local beaconHome = 0
+local security = 'Sécurité'
+
+commandArray = {}
 
 print('Modification d\'un Nut')
 
@@ -14,12 +17,11 @@ end
 print(beaconHome .. ' Nut à la maison')
 
 if otherdevices[security] == 'Absence' and beaconHome >= 1 then -- switch Off Alarm because 1 beacon come back Home
-    commandArray[security] = 'On'
+    Library.addToCommand(security, "On")
     print('Auto désactivation alarme')
 elseif otherdevices[security] ~= 'Absence' and beaconHome == 0 then -- switch On Alarm because all beacon are away
-    commandArray[security] = 'Absence'
+    Library.addToCommand(security, "Absence")
     print('Auto activation alarme')
 end
 
 return commandArray
-
