@@ -8,7 +8,7 @@ volumeInterupteur = 'test'
 
 package.path = package.path .. ';' .. '/home/k20/domoticz/scripts/lua/?.lua'
 Library = require('Library')
-JSON = assert(loadfile "JSON.lua")()
+JSON = assert(loadfile '/home/k20/domoticz/scripts/lua/JSON.lua')()
 
 if devicechanged[volumeInterupteur] then
     local volume = assert(io.popen('curl http://' .. tvIp .. ':' .. tvPort .. '/6/audio/volume'))
