@@ -14,10 +14,7 @@ Library = require('Library')
 
 if devicechanged[volumeInterupteurUp] or devicechanged[volumeInterupteurDown] then
     local currentVolume = Library.readTvVolume(tvIp, tvPort)
-    local setVolume
-
-    print(devicechanged[volumeInterupteurUp])
-    print(devicechanged[volumeInterupteurDown])
+    local setVolume = 0
 
     if devicechanged[volumeInterupteurUp] then
         setVolume = currentVolume + 1
@@ -30,9 +27,6 @@ if devicechanged[volumeInterupteurUp] or devicechanged[volumeInterupteurDown] th
     if setVolume > 60 then
         setVolume = 60
     end
-
-    print(currentVolume)
-    print(setVolume)
 
     Library.setTvVolume(tvIp, tvPort, setVolume)
 end
