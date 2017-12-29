@@ -13,7 +13,9 @@ JSON = assert(loadfile '/home/k20/domoticz/scripts/lua/JSON.lua')()
 if devicechanged[volumeInterupteur] then
     local volumeRead = assert(io.popen('curl http://' .. tvIp .. ':' .. tvPort .. '/6/audio/volume'))
     local volumeJson = volumeRead:read('*all')
-    local volume = JSON:decode(volume)
-    print(volumeJson)
+    volumeRead:close()
+    local volume = JSON:decode(volumeJson)
+
+ --   print(volumeJson)
     print(volume.current)
 end
