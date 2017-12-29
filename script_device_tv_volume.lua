@@ -18,7 +18,9 @@ if devicechanged[volumeInterupteurUp] or devicechanged[volumeInterupteurDown] th
 
     if devicechanged[volumeInterupteurUp] then
         setVolume = currentVolume + 1
-    else
+    end
+
+    if devicechanged[volumeInterupteurDown] then
         setVolume = currentVolume - 1
     end
 
