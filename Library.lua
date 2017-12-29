@@ -184,18 +184,10 @@ function Library.readTvVolume(tvIp, tvPort)
 end
 
 function Library.setTvVolume(tvIp, tvPort, volume)
-    JSON = assert(loadfile '/home/k20/domoticz/scripts/lua/JSON.lua')()
+    local JSON = assert(loadfile '/home/k20/domoticz/scripts/lua/JSON.lua')()
 
-    runcommand = "curl -XPOST https://api.lifx.com:443/v1beta1/lights/label: .. (lifxlabel) .. "/power.json?state=off";
+    local runcommand = 'curl -X POST -H "Content-Type: application/json" -d \'{"muted":false, "current":' .. volume .. '}\' http://' .. tvIp .. ':' .. tvPort .. '/6/audio/volume'
     os.execute(runcommand)
-
-    local volumeRead = assert(io.popen('curl http://' .. tvIp .. ':' .. tvPort .. '/6/audio/volume'))
-
-    local volumeJson = volumeRead:read('*all')
-    volumeRead:close()
-    local volume = JSON:decode(volumeJson)
-
-    return volume.current
 end
 
 return Library
