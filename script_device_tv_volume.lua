@@ -8,14 +8,9 @@ volumeInterupteur = 'test'
 
 package.path = package.path .. ';' .. '/home/k20/domoticz/scripts/lua/?.lua'
 Library = require('Library')
-JSON = assert(loadfile '/home/k20/domoticz/scripts/lua/JSON.lua')()
+
 
 if devicechanged[volumeInterupteur] then
-    local volumeRead = assert(io.popen('curl http://' .. tvIp .. ':' .. tvPort .. '/6/audio/volume'))
-    local volumeJson = volumeRead:read('*all')
-    volumeRead:close()
-    local volume = JSON:decode(volumeJson)
-
- --   print(volumeJson)
-    print(volume.current)
+    print(Library.readTvVolume(tvIp, tvPort))
+    print(otherdevices_svalues[volumeInterupteur])
 end

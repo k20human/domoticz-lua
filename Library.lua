@@ -172,4 +172,15 @@ function Library.sendEmail(title, body)
     end
 end
 
+function Library.readTvVolume(tvIp, tvPort)
+    JSON = assert(loadfile '/home/k20/domoticz/scripts/lua/JSON.lua')()
+
+    local volumeRead = assert(io.popen('curl http://' .. tvIp .. ':' .. tvPort .. '/6/audio/volume'))
+    local volumeJson = volumeRead:read('*all')
+    volumeRead:close()
+    local volume = JSON:decode(volumeJson)
+
+    return volume.current
+end
+
 return Library
