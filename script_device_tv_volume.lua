@@ -24,6 +24,7 @@ if devicechanged[volumeInterupteurUp] or devicechanged[volumeInterupteurDown] th
     end
 
     Library.setTvKey(tvIp, tvPort, setVolume)
+    os.execute("sleep 1")
     Library.setTvKey(tvIp, tvPort, setVolume)
 end
 
