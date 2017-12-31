@@ -13,22 +13,18 @@ package.path = package.path .. ';' .. '/home/k20/domoticz/scripts/lua/?.lua'
 Library = require('Library')
 
 if devicechanged[volumeInterupteurUp] or devicechanged[volumeInterupteurDown] then
-    local currentVolume = Library.readTvVolume(tvIp, tvPort)
-    local setVolume = 0
+    local setVolume = ''
 
     if devicechanged[volumeInterupteurUp] then
-        setVolume = currentVolume + 1
+        setVolume = 'VolumeUp'
     end
 
     if devicechanged[volumeInterupteurDown] then
-        setVolume = currentVolume - 1
+        setVolume = 'VolumeDown'
     end
 
-    if setVolume > 60 then
-        setVolume = 60
-    end
-
-    Library.setTvVolume(tvIp, tvPort, setVolume)
+    Library.setTvKey(tvIp, tvPort, setVolume)
+    Library.setTvKey(tvIp, tvPort, setVolume)
 end
 
 return commandArray

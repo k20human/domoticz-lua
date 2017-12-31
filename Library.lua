@@ -183,10 +183,10 @@ function Library.readTvVolume(tvIp, tvPort)
     return volume.current
 end
 
-function Library.setTvVolume(tvIp, tvPort, volume)
+function Library.setTvKey(tvIp, tvPort, volume)
     local JSON = assert(loadfile '/home/k20/domoticz/scripts/lua/JSON.lua')()
 
-    local runcommand = 'curl -X POST -H "Content-Type: application/json" -d \'{"muted":false, "current":' .. volume .. '}\' http://' .. tvIp .. ':' .. tvPort .. '/6/audio/volume'
+    local runcommand = 'curl -X POST -H "Content-Type: application/json" -d \'{"key":' .. volume .. '}\' http://' .. tvIp .. ':' .. tvPort .. '/6/input/key'
     os.execute(runcommand)
 end
 
