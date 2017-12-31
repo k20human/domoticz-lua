@@ -188,6 +188,8 @@ function Library.setTvKey(tvIp, tvPort, volume)
 
     local runcommand = 'curl -X POST -H "Content-Type: application/json" -d \'{"key":"' .. volume .. '"}\' http://' .. tvIp .. ':' .. tvPort .. '/6/input/key'
     os.execute(runcommand)
+    os.execute("sleep 1")
+    os.execute(runcommand)
 end
 
 return Library
