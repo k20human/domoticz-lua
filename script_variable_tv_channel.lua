@@ -23,14 +23,14 @@ channels = {
     ['20'] = 'hd1',
     ['22'] = '6ter',
     ['23'] = 'numero23',
-    ['24'] = 'rmc',
+    ['24'] = 'rmc'
 }
 
 package.path = package.path .. ';' .. '/home/k20/domoticz/scripts/lua/?.lua'
 Library = require('Library')
 
 if (uservariablechanged['TvChannel']) then
-    local tvChannel = uservariables['TvChannel'].lower():gsub("%s+", "")
+    local tvChannel = uservariables['TvChannel']:lower():gsub("%s+", "")
 
     print(tvChannel)
 
