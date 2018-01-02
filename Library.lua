@@ -188,8 +188,37 @@ function Library.readTvVolume(tvIp, tvPort)
     return volume.current
 end
 
-function Library.setTvKey(tvIp, tvPort, volume)
-    local runcommand = 'curl -X POST -H "Content-Type: application/json" -d \'{"key":"' .. volume .. '"}\' http://' .. tvIp .. ':' .. tvPort .. '/6/input/key'
+function Library.setTvKey(tvIp, tvPort, key)
+    local runcommand = 'curl -X POST -H "Content-Type: application/json" -d \'{"key":"' .. key .. '"}\' http://' .. tvIp .. ':' .. tvPort .. '/6/input/key'
+    os.execute(runcommand)
+end
+
+function Library.setTvDigit(tvIp, tvPort, number)
+    local digit = ''
+
+    if number == 0 then
+        digit = 'Digit0'
+    elseif number == 1 then
+        digit = 'Digit1'
+    elseif number == 2 then
+        digit = 'Digit2'
+    elseif number == 3 then
+        digit = 'Digit3'
+    elseif number == 4 then
+        digit = 'Digit4'
+    elseif number == 5 then
+        digit = 'Digit5'
+    elseif number == 6 then
+        digit = 'Digit6'
+    elseif number == 7 then
+        digit = 'Digit7'
+    elseif number == 8 then
+        digit = 'Digit8'
+    elseif number == 9 then
+        digit = 'Digit9'
+    end
+
+    local runcommand = 'curl -X POST -H "Content-Type: application/json" -d \'{"key":"' .. digit .. '"}\' http://' .. tvIp .. ':' .. tvPort .. '/6/input/key'
     os.execute(runcommand)
 end
 
