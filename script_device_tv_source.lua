@@ -16,13 +16,25 @@ Library = require('Library')
 if devicechanged[selector] then
     local source = ''
 
+    Library.setTvKey(tvIp, tvPort, 'Source')
+
     if (otherdevices[selector] == sourceTv) then
-        source = 'tv'
-    elseif (otherdevices[selector] == sourceTv) then
-        source = 'hdmi'
+        Library.setTvKey(tvIp, tvPort, 'CursorDown')
+        Library.setTvKey(tvIp, tvPort, 'CursorDown')
+        Library.setTvKey(tvIp, tvPort, 'CursorDown')
+        Library.setTvKey(tvIp, tvPort, 'CursorDown')
+        Library.setTvKey(tvIp, tvPort, 'CursorDown')
+        Library.setTvKey(tvIp, tvPort, 'CursorDown')
+    elseif (otherdevices[selector] == sourceShield) then
+        Library.setTvKey(tvIp, tvPort, 'CursorUp')
+        Library.setTvKey(tvIp, tvPort, 'CursorUp')
+        Library.setTvKey(tvIp, tvPort, 'CursorUp')
+        Library.setTvKey(tvIp, tvPort, 'CursorUp')
+        Library.setTvKey(tvIp, tvPort, 'CursorUp')
+        Library.setTvKey(tvIp, tvPort, 'CursorUp')
     end
 
-    Library.setTvSource(tvIp, tvPort, source)
+    Library.setTvKey(tvIp, tvPort, 'Confirm')
 end
 
 return commandArray
