@@ -32,8 +32,6 @@ Library = require('Library')
 if (uservariablechanged['TvChannel']) then
     local tvChannel = uservariables['TvChannel']:lower():gsub("%s+", "")
 
-    print(tvChannel)
-
     for number, channel in pairs(channels) do
         if (tvChannel == number or channel == tvChannel) then
             -- Convert string to digit
