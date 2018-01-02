@@ -16,7 +16,7 @@ Library = require('Library')
 if devicechanged[selector] then
     if (otherdevices[selector] == sourceShield or otherdevices[selector] == sourceTv) then
         Library.setTvKey(tvIp, tvPort, 'Source')
-        os.execute("sleep 1")
+        os.execute("sleep 2")
 
         if (otherdevices[selector] == sourceShield) then
             Library.setTvKey(tvIp, tvPort, 'CursorDown')
