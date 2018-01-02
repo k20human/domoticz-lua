@@ -14,24 +14,28 @@ package.path = package.path .. ';' .. '/home/k20/domoticz/scripts/lua/?.lua'
 Library = require('Library')
 
 if devicechanged[selector] then
-    local source = ''
-
     Library.setTvKey(tvIp, tvPort, 'Source')
 
-    if (otherdevices[selector] == sourceTv) then
+    if (otherdevices[selector] == sourceShield) then
         Library.setTvKey(tvIp, tvPort, 'CursorDown')
         Library.setTvKey(tvIp, tvPort, 'CursorDown')
         Library.setTvKey(tvIp, tvPort, 'CursorDown')
         Library.setTvKey(tvIp, tvPort, 'CursorDown')
         Library.setTvKey(tvIp, tvPort, 'CursorDown')
         Library.setTvKey(tvIp, tvPort, 'CursorDown')
-    elseif (otherdevices[selector] == sourceShield) then
+    elseif (otherdevices[selector] == sourceTv) then
         Library.setTvKey(tvIp, tvPort, 'CursorUp')
+        Library.sleep(0.1)
         Library.setTvKey(tvIp, tvPort, 'CursorUp')
+        Library.sleep(0.1)
         Library.setTvKey(tvIp, tvPort, 'CursorUp')
+        Library.sleep(0.1)
         Library.setTvKey(tvIp, tvPort, 'CursorUp')
+        Library.sleep(0.1)
         Library.setTvKey(tvIp, tvPort, 'CursorUp')
+        Library.sleep(0.1)
         Library.setTvKey(tvIp, tvPort, 'CursorUp')
+        Library.sleep(0.1)
     end
 
     Library.setTvKey(tvIp, tvPort, 'Confirm')

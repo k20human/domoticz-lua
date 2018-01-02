@@ -172,6 +172,11 @@ function Library.sendEmail(title, body)
     end
 end
 
+function Library.sleep(s)
+  local ntime = os.clock() + s
+  repeat until os.clock() > ntime
+end
+
 function Library.readTvVolume(tvIp, tvPort)
     local JSON = assert(loadfile '/home/k20/domoticz/scripts/lua/JSON.lua')()
 
