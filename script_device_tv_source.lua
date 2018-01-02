@@ -9,11 +9,12 @@ tvPort = '1925'
 selector = 'Source TV'
 sourceTv = 'TV'
 sourceShield = 'Shield'
+sourceNeutral = 'Neutre'
 
 package.path = package.path .. ';' .. '/home/k20/domoticz/scripts/lua/?.lua'
 Library = require('Library')
 
-if devicechanged[selector] then
+if (devicechanged[selector] and otherdevices[selector] ~= sourceNeutral) then
     if (otherdevices[selector] == sourceShield or otherdevices[selector] == sourceTv) then
         Library.setTvKey(tvIp, tvPort, 'Source')
         os.execute("sleep 2")
@@ -35,9 +36,9 @@ if devicechanged[selector] then
         end
 
         Library.setTvKey(tvIp, tvPort, 'Confirm')
-    end
 
-    commandArray[selector] = 'Set Level: 30'
+        commandArray[selector] = 'Set Level: 30'
+    end
 end
 
 return commandArray
