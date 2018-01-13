@@ -13,7 +13,7 @@ package.path = package.path .. ';' .. '/home/k20/domoticz/scripts/lua/?.lua'
 Library = require('Library')
 
 if (devicechanged[button]) then
-    local ping_success = os.execute('ping -c1 -W1 ' .. tvIp)
+    local ping_success = os.execute('fping -c1 -t100 ' .. tvIp)
 
     if ping_success then
         print("TV - ping ok")
