@@ -15,7 +15,7 @@ commandArray = {}
 if (devicechanged[sonnette]) then
 	Library.addToCommand(volume, 'Set Level 15')
     Library.addToCommand(sonnetteSound, "Set Level: 10")
-	Library.addToCommand(sonnetteSound, "Set Level: 10 AFTER 2")
+	Library.addToCommand(sonnetteSound, "Set Level: 10 AFTER 4")
 end
 
 return commandArray
