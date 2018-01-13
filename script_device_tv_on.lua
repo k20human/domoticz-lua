@@ -22,9 +22,6 @@ if (devicechanged[button]) then
         print("TV - ping fail - wol")
         commandArray[buttonWol] = 'On'
     end
-
-
-
 end
 
 return commandArray
