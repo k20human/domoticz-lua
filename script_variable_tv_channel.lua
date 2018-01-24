@@ -6,6 +6,7 @@ commandArray = {}
 
 tvIp = '192.168.1.36'
 tvPort = '1925'
+tvVariable = 'TvChannel'
 channels = {
     ['1'] = 'tf1',
     ['2'] = 'france2',
@@ -29,8 +30,8 @@ channels = {
 package.path = package.path .. ';' .. '/home/k20/domoticz/scripts/lua/?.lua'
 Library = require('Library')
 
-if (uservariablechanged['TvChannel']) then
-    local tvChannel = uservariables['TvChannel']:lower():gsub("%s+", "")
+if (uservariablechanged[tvVariable]) then
+    local tvChannel = uservariables[tvVariable]:lower():gsub("%s+", "")
 
     for number, channel in pairs(channels) do
         if (tvChannel == number or channel == tvChannel) then
