@@ -11,7 +11,7 @@ volumeVariable = 'TvVolume'
 package.path = package.path .. ';' .. '/home/k20/domoticz/scripts/lua/?.lua'
 Library = require('Library')
 
-if uservariablechanged[volumeVariable] then
+if uservariablechanged[volumeVariable] ~= nil then
     local tvVolume = uservariables[volumeVariable]
     local setVolume = ''
 

@@ -30,7 +30,7 @@ channels = {
 package.path = package.path .. ';' .. '/home/k20/domoticz/scripts/lua/?.lua'
 Library = require('Library')
 
-if (uservariablechanged[tvVariable]) then
+if (uservariablechanged[tvVariable] ~= nil) then
     local tvChannel = uservariables[tvVariable]:lower():gsub("%s+", "")
 
     for number, channel in pairs(channels) do

@@ -1,6 +1,6 @@
 commandArray = {}
 
-if (uservariablechanged['GoogleHome']) then
+if (uservariablechanged['GoogleHome'] ~= nil) then
     commandArray['GoogleHome'] = 'On'
 end 
 
