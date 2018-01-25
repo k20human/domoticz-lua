@@ -27,8 +27,11 @@ if uservariablechanged[volumeVariable] ~= nil then
         Library.setTvKey(tvIp, tvPort, setVolume)
         os.execute("sleep 1")
 
+        print(tvVolume)
+
         for i = 1, math.abs(tvVolume), 1
         do
+            print(i)
            Library.setTvKey(tvIp, tvPort, setVolume)
         end
     end

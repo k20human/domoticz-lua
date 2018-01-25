@@ -11,7 +11,7 @@ heures = Library.getCurrentHours()
 gestion = 'Gestion chauffage chambre Théa'
 
 -- Tous les soirs à 20h
-if (minutes == 0) or (heures == 20) then
+if (minutes == 0) and (heures == 20) then
 	-- Passer le chauffage en mode 'On', si :
 	-- Il n'est pas en mode Off ou Mode Vacances
 	if (otherdevices[gestion] ~= 'Vacances' and otherdevices[gestion] ~= 'Off') then
