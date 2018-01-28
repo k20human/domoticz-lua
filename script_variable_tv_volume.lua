@@ -30,7 +30,7 @@ if uservariablechanged[volumeVariable] ~= nil then
         for i = 1, math.abs(tvVolume), 1
         do
             Library.setTvKey(tvIp, tvPort, setVolume)
-            Library.sleep(0.1)
+            Library.sleep(0.7)
         end
     end
 end
