@@ -32,7 +32,7 @@ commandArray = {}
 -- Recupere les minutes
 minutes = Library.getCurrentMinutes()
 
-if ((minutes + 1) % 5 == 0) then
+if ((minutes - 1) % 5 == 0) then
 	-- On parcourt les zones
 	for zone, radiateurs in pairs(zones) do
         print('Chauffage - Zone ' .. zone)
