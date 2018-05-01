@@ -6,6 +6,7 @@ Library = require('Library')
 interupteur = 'Bonne nuit'
 lampes = {
     'Lampe salon',
+    'Lampe cuisine',
     'Lampe TV'
 }
 
