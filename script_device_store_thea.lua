@@ -11,7 +11,7 @@ store = 'Store Théa'
 
 if devicechanged[store] then
 	-- Ouverture du store
-	if otherdevices[store] == 'On' then
+	if otherdevices[store] == 'Open' then
 		-- Si la gestion du chauffage est active on repasse en 'On'
 		if (otherdevices[gestion] ~= 'Off') then
 			Library.addToCommand(gestion, 'Set Level: 30')
