@@ -1,7 +1,7 @@
 commandArray = {}
 
 interupteur = 'Interrupteur entrée'
-lampe = 'Lampes chambre parents'
+lampe = 'Lampe entrée'
 
 if devicechanged[interupteur] and otherdevices[lampe] == 'Off' then
     commandArray[lampe] = 'On'
