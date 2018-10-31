@@ -1,5 +1,5 @@
 -----------------------------------------
--- Gestion du volume de la TV via variable
+-- Gestion du volume de la TV via variable (Google Home)
 -----------------------------------------
 
 commandArray = {}
@@ -24,11 +24,10 @@ if uservariablechanged[volumeVariable] ~= nil then
     end
 
     if (setVolume ~= '') then
-        Library.setTvKey(tvIp, tvPort, setVolume)
-        os.execute("sleep 1")
-
         for i = 1, math.abs(tvVolume), 1
         do
+            Library.setTvKey(tvIp, tvPort, setVolume)
+            Library.sleep(0.7)
             Library.setTvKey(tvIp, tvPort, setVolume)
             Library.sleep(0.7)
         end

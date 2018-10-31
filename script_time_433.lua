@@ -14,9 +14,11 @@ if (minutes == 0) or (minutes == 5) then
 	-- Renforcement des envois de signal
 	local check = {
 		'Radiateur chambre Théa',
-		'Radiateur salon',
-		'Radiateur salle à manger',
-		'Radiateur salle de bain'
+        'Radiateur salle de bain',
+        'Radiateur salle à manger',
+        'Radiateur salon',
+        'Radiateur chambre parents',
+        'Radiateur bureau'
 	}
 
 	-- Parcours le Tableau

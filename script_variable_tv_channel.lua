@@ -1,5 +1,5 @@
 -----------------------------------------
--- Gestion des chaines de la TV
+-- Gestion des chaines de la TV (Google Home)
 -----------------------------------------
 
 commandArray = {}

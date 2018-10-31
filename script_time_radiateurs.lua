@@ -47,6 +47,11 @@ if ((minutes - 1) % 5 == 0) then
 			elseif (temperature >= (tempVacs + hysteresis) ) then
 				Library.onOffDevices(radiateurs, 'Off', 'vacances')
 			end
+        -- Gestion spécifique Indépendant
+		elseif (otherdevices[management .. zone] == 'Indépendant') then
+			if (temperature >= (thermostatValue + hysteresis) ) then
+				Library.onOffDevices(radiateurs, 'Off', 'mode forcé indépendant')
+			end
 		-- Mode forcé
 		elseif (otherdevices[management .. zone] == 'Mode forcé') then
 			if (temperature <= (thermostatValue - hysteresis) ) then
