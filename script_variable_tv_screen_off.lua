@@ -15,7 +15,7 @@ if uservariablechanged[screenVariable] ~= nil then
     Library.setTvKey(tvIp, tvPort, 'Adjust')
     Library.sleep(0.2)
 
-    for i = 1, 6, 1
+    for i = 0, 7, 1
     do
         Library.setTvKey(tvIp, tvPort, 'CursorDown')
         Library.sleep(0.2)
