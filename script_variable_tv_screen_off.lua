@@ -30,7 +30,7 @@ if uservariablechanged[screenVariable] ~= nil then
     Library.sleep(0.2)
 
     Library.setTvKey(tvIp, tvPort, 'Confirm')
-    Library.sleep(0.2)
+    Library.sleep(0.5)
 
     Library.setTvKey(tvIp, tvPort, 'CursorDown')
     Library.sleep(0.2)
