@@ -13,30 +13,29 @@ Library = require('Library')
 
 if uservariablechanged[screenVariable] ~= nil then
     Library.setTvKey(tvIp, tvPort, 'Adjust')
-    Library.sleep(0.2)
+    Library.sleep(0.5)
 
     for i = 0, 7, 1
     do
         Library.setTvKey(tvIp, tvPort, 'CursorDown')
-        Library.sleep(0.2)
+        Library.sleep(0.5)
     end
-
-    Library.setTvKey(tvIp, tvPort, 'Confirm')
-    Library.sleep(0.2)
-
-    Library.setTvKey(tvIp, tvPort, 'CursorDown')
-    Library.sleep(0.2)
-    Library.setTvKey(tvIp, tvPort, 'CursorDown')
-    Library.sleep(0.2)
 
     Library.setTvKey(tvIp, tvPort, 'Confirm')
     Library.sleep(0.5)
 
     Library.setTvKey(tvIp, tvPort, 'CursorDown')
-    Library.sleep(0.2)
+    Library.sleep(0.5)
+    Library.setTvKey(tvIp, tvPort, 'CursorDown')
+    Library.sleep(0.5)
 
     Library.setTvKey(tvIp, tvPort, 'Confirm')
-    Library.sleep(0.2)
+    Library.sleep(0.5)
+
+    Library.setTvKey(tvIp, tvPort, 'CursorDown')
+    Library.sleep(0.5)
+
+    Library.setTvKey(tvIp, tvPort, 'Confirm')
 end
 
 return commandArray
