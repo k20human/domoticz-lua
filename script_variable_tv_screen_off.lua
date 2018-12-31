@@ -13,9 +13,9 @@ Library = require('Library')
 
 if uservariablechanged[screenVariable] ~= nil then
     Library.setTvKey(tvIp, tvPort, 'Adjust')
-    Library.sleep(0.8)
+    Library.sleep(1.5)
 
-    for i = 0, 5, 1
+    for i = 1, 6
     do
         Library.setTvKey(tvIp, tvPort, 'CursorDown')
         Library.sleep(0.8)
