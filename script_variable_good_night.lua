@@ -13,6 +13,7 @@ appareils = {
 
 if (uservariablechanged[variable] ~= nil) then
     Library.onOffDevices(appareils, 'Off', '')
+    commandArray['Eteindre TV'] = 'On'
 end
 
 return commandArray
