@@ -68,6 +68,10 @@ function Library.convertTime(timestamp)
     return os.time { year = y, month = m, day = d, hour = H, min = M, sec = S }
 end
 
+function Library.getDayNumberOfWeek()
+    return tonumber(os.date("*t").wday)
+end
+
 function Library.getCurrentHours()
     local time = os.time()
 

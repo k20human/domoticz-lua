@@ -18,21 +18,21 @@ if uservariablechanged[screenVariable] ~= nil then
     for i = 1, 6
     do
         Library.setTvKey(tvIp, tvPort, 'CursorDown')
-        Library.sleep(0.8)
+        Library.sleep(1.0)
     end
 
     Library.setTvKey(tvIp, tvPort, 'Confirm')
     Library.sleep(1.5)
 
     Library.setTvKey(tvIp, tvPort, 'CursorDown')
-    Library.sleep(0.8)
+    Library.sleep(1.0)
     Library.setTvKey(tvIp, tvPort, 'CursorDown')
-    Library.sleep(0.8)
+    Library.sleep(1.0)
 
     Library.setTvKey(tvIp, tvPort, 'CursorRight')
-    Library.sleep(0.8)
+    Library.sleep(1.0)
     Library.setTvKey(tvIp, tvPort, 'CursorDown')
-    Library.sleep(0.8)
+    Library.sleep(1.0)
 
     Library.setTvKey(tvIp, tvPort, 'Confirm')
 end
