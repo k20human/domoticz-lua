@@ -15,6 +15,11 @@ if devicechanged[store] then
 		-- Si la gestion du chauffage est active on repasse en 'On'
 		if (otherdevices[gestion] ~= 'Off') then
 			Library.addToCommand(gestion, 'Set Level: 30')
+
+			local heure = Library.getCurrentHours()
+			if heure <= 12 then
+				Library.addToCommand(calendrier, 'Off')
+			end
 		-- Si la gestion du chauffage est inactive on s'assure qu'elle est en 'Off'
 		elseif (otherdevices[gestion] == 'Off') then
 			Library.addToCommand(gestion, 'Set Level: 0')
