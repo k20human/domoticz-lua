@@ -11,13 +11,15 @@ commandArray = {}
 minutes = Library.getCurrentMinutes()
 heures = Library.getCurrentHours()
 
-if (minutes == 10) and (heures == 12) then
+if (minutes == 13) and (heures == 12) then
 
     local nuts = {
         'Nut_Marvel',
         'Nut_Katia',
         'Nut_Kevin'
     }
+
+    local n = table.getn(nuts)
 
     -- Delai au dela duquel on alerte en secondes - 24h
     local alerte = 86400
@@ -36,7 +38,7 @@ if (minutes == 10) and (heures == 12) then
             end
         end
 
-        if nutsOffline > 0 and nutsOffline ~= table.getn(nuts) then
+        if nutsOffline > 0 and nutsOffline ~= n then
             Library.sendEmail(emailTitle, "Penser à changer les piles des nuts suivants :<br/><br/>" .. mail)
         end
     end
