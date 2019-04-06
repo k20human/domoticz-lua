@@ -11,7 +11,7 @@ commandArray = {}
 minutes = Library.getCurrentMinutes()
 heures = Library.getCurrentHours()
 
-if (minutes == 21) and (heures == 12) then
+if (minutes == 0) and (heures == 6) then
 
     local nuts = {
         'Nut_Marvel',
