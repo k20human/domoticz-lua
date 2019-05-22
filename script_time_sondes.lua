@@ -15,7 +15,11 @@ if (minutes == 0) then
     local temp = {
 		'Température chambre parents',
 		'Température extérieure',
-		'Température bureau'
+		'Température bureau',
+		'Température chambre Théa',
+		'Température rdc',
+		'Température cave à vins',
+		'Température garage'
 	}
 
     -- Delai au dela duquel on alerte en secondes - 24h

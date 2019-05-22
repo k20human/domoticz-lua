@@ -19,7 +19,8 @@ if (minutes == 0) or (minutes == 5) then
         'Radiateur salon',
         'Radiateur chambre parents',
         'Radiateur bureau',
-		'Interrupteur caisson'
+		'Interrupteur caisson',
+		'Imprimante 3D'
 	}
 
 	-- Parcours le Tableau
