@@ -18,8 +18,7 @@ if uservariablechanged[printer] ~= nil then
     local addHours = os.date("%H") + 1 + hours
     local day = os.time{year=os.date("%Y"), month=os.date("%m"), day=os.date("%d"), hour=addHours, min=0, sec=0}
 
-    local runcommand = 'curl -X GET http://' .. ip .. ':' .. port .. '/json.htm?type=command&param=addtimer&idx=' .. printerID .. '&active=true&timertype=5&hour=' .. os.date("%H", day) .. '&min=2&date=' .. os.date("%Y-%m-%d", day) .. '&randomness=false&command=1&days=1234567'
-    print(runcommand)
+    local runcommand = 'curl -X GET \'http://' .. ip .. ':' .. port .. '/json.htm?type=command&param=addtimer&idx=' .. printerID .. '&active=true&timertype=5&hour=' .. os.date("%H", day) .. '&min=2&date=' .. os.date("%Y-%m-%d", day) .. '&randomness=false&command=1&days=1234567\''
     os.execute(runcommand)
 end
 
