@@ -12,7 +12,7 @@ if devicechanged[heartLeft] or devicechanged[heartRight] then
         side = 'right'
     end
 
-    print(devicechanged[heartLeft])
+    print(otherdevices_svalues[heartLeft])
 
     -- local runcommand = 'curl -X GET  http://' .. ip .. ':80?side='  .. side .. '&r=' .. .. '&g=' .. .. '&b=' ..
     -- os.execute(runcommand)
