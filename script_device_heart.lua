@@ -14,8 +14,8 @@ if devicechanged[heartLeft] or devicechanged[heartRight] then
 
     print(devicechanged[heartLeft])
 
-    //local runcommand = 'curl -X GET  http://' .. ip .. ':80?side='  .. side .. '&r=' .. .. '&g=' .. .. '&b=' ..
-    //os.execute(runcommand)
+    -- local runcommand = 'curl -X GET  http://' .. ip .. ':80?side='  .. side .. '&r=' .. .. '&g=' .. .. '&b=' ..
+    -- os.execute(runcommand)
 end
 
 return commandArray
