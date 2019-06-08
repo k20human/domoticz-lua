@@ -28,7 +28,6 @@ if devicechanged[heartLeft] or devicechanged[heartRight] then
     jsondata:close()
     local jsonCPM = Json:decode(jsondevices)
     local acolor = jsonCPM.result[1].Color
-    print (acolor)
     
     acolorj = acolor:gsub("}",",}")
     for k,v in acolorj:gmatch('"(.-)":(.-),') do
@@ -39,14 +38,10 @@ if devicechanged[heartLeft] or devicechanged[heartRight] then
         elseif (k == 'g') then
             green = v
         end
-    end 
+    end
 
-    print(blue)
-    print(red)
-    print(green)
-
-    -- local runcommand = 'curl -X GET  http://' .. ip .. ':80?side='  .. side .. '&r=' .. .. '&g=' .. .. '&b=' ..
-    -- os.execute(runcommand)
+    local runcommand = 'curl -X GET  http://' .. ip .. ':80?side='  .. side .. '&r=' .. red .. '&g=' .. green .. '&b=' .. blue
+    os.execute(runcommand)
 end
 
 return commandArray
