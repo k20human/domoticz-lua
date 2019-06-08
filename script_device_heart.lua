@@ -26,7 +26,7 @@ if devicechanged[heartLeft] or devicechanged[heartRight] then
     local jsondata = assert(io.popen(loadData))
     local jsondevices = jsondata:read('*all')
     jsondata:close()
-    local jsonCPM = json:decode(jsondevices)
+    local jsonCPM = Json:decode(jsondevices)
     local acolor = jsonCPM.result[1].Color
     print (acolor)
     
