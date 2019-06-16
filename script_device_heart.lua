@@ -35,6 +35,7 @@ if devicechanged[heartLeft] or devicechanged[heartRight] then
     local status = jsonCPM.result[1].Status
 
     print(status)
+    print(otherdevices[deviceName])
 
     if status == 'Off' then
         local runcommand = 'curl -X GET  "http://' .. ip .. ':80?side='  .. side .. '&stop=1'
