@@ -5,8 +5,8 @@ local Json = (loadfile (Library.scriptPath() .. "/JSON.lua"))()
 commandArray = {}
 heartLeft = 'Coeur gauche'
 heartRight = 'Coeur droit'
-heartLeftId = 197
-heartRightId = 198
+heartLeftId = 198
+heartRightId = 197
 ip = '192.168.1.93'
 
 if devicechanged[heartLeft] or devicechanged[heartRight] then
@@ -16,11 +16,11 @@ if devicechanged[heartLeft] or devicechanged[heartRight] then
     local runcommand = ''
 
     if (devicechanged[heartLeft]) then
-        side = 'left'
+        side = 'right'
         idx = heartLeftId
         deviceName = heartLeft
     else
-        side = 'right'
+        side = 'left'
         idx = heartRightId
         deviceName = heartRight
     end
