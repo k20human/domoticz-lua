@@ -38,7 +38,7 @@ if devicechanged[heartLeft] or devicechanged[heartRight] then
     print(otherdevices[deviceName])
 
     if status == 'Off' then
-        local runcommand = 'curl -X GET  "http://' .. ip .. ':80?side='  .. side .. '&stop=1'"'
+        local runcommand = 'curl -X GET  "http://' .. ip .. ':80?side='  .. side .. '&stop=1"'
         os.execute(runcommand)
     else
         acolorj = acolor:gsub("}",",}")
