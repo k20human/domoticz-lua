@@ -34,10 +34,9 @@ if devicechanged[heartLeft] or devicechanged[heartRight] then
     local level = jsonCPM.result[1].Level
     local status = jsonCPM.result[1].Status
 
-    print(status)
     print(otherdevices[deviceName])
 
-    if status == 'Off' then
+    if otherdevices[deviceName] == 'Off' then
         local runcommand = 'curl -X GET  "http://' .. ip .. ':80?side='  .. side .. '&stop=1"'
         os.execute(runcommand)
     else
