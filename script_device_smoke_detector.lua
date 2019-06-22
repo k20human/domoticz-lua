@@ -7,7 +7,7 @@ smokeDetector = 'Détecteur fumée étage'
 
 if devicechanged[smokeDetector] and otherdevices[smokeDetector] == 'On' then
     local emailTitle = '[Domoticz] Fumée détectée'
-    local mail = 'De la fumée est détectée à l'étage'
+    local mail = "De la fumée est détectée à l'étage"
 
     Library.sendEmail(emailTitle, mail)
 end
