@@ -14,6 +14,7 @@ if (minutes == 0) then
 
     local temp = {
 		'Température chambre parents',
+		'Température chambre 2',
 		'Température extérieure',
 		'Température bureau',
 		'Température chambre Théa',

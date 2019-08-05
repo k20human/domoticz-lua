@@ -4,8 +4,8 @@ interupteur = 'Vacances'
 heating_management = {
     ['chambre Théa'] = '30',
 	['rdc'] = '30',
-	['chambre parents'] = '30',
-	['bureau'] = '0'
+	['chambre 2'] = '0',
+	['bureau'] = '30'
 }
 
 if devicechanged[interupteur] and otherdevices[interupteur] == 'On' then

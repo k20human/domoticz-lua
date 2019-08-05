@@ -23,7 +23,7 @@ zones = {
 		'Radiateur salon',
 		'Radiateur salle à manger'
 	},
-	['chambre parents'] = {'Radiateur chambre parents'},
+	['chambre 2'] = {'Radiateur chambre 2'},
 	['bureau'] = {'Radiateur bureau'}
 }
 
