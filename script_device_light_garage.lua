@@ -6,6 +6,11 @@ detection2 = 'Présence garage 2'
 lampes = 'Lampes garage'
 force = 'Forcer lumière garage'
 
+print(devicechanged[detection])
+print(devicechanged[detection2])
+print(otherdevices[detection])
+print(otherdevices[detection2])
+
 -- On ouvre la porte
 if devicechanged[interupteur] and devicechanged[interupteur] == 'Open' then
     commandArray['Group:' .. lampes] = 'On'
