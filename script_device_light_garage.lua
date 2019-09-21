@@ -6,11 +6,6 @@ detection2 = 'Présence garage 2'
 lampes = 'Lampes garage'
 force = 'Forcer lumière garage'
 
-print('Garage - changed 1 ' .. devicechanged[detection])
-print('Garage - changed 2 ' .. devicechanged[detection2])
-print('Garage - dev 1 ' .. otherdevices[detection])
-print('Garage - dev 2 ' .. otherdevices[detection2])
-
 -- On ouvre la porte
 if devicechanged[interupteur] and devicechanged[interupteur] == 'Open' then
     commandArray['Group:' .. lampes] = 'On'
