@@ -4,7 +4,7 @@ interupteur = 'Vacances'
 heating_management = {
     ['chambre Théa'] = '30',
 	['rdc'] = '30',
-	['chambre 2'] = '0',
+	['chambre Maxime'] = '30',
 	['bureau'] = '30'
 }
 

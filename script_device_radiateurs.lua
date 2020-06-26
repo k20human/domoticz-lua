@@ -12,7 +12,7 @@ check = {
 	'Radiateur salle de bain',
 	'Radiateur salle à manger',
 	'Radiateur salon',
-	'Radiateur chambre 2',
+	'Radiateur chambre Maxime',
 	'Radiateur bureau'
 }
 
