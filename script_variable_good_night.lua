@@ -8,7 +8,7 @@ appareils = {
     'Lampe salon',
     'Lampe cuisine',
     'Lampe salle à manger',
-    'Lampe TV',
+    'Lampe ambilight',
     'Interrupteur caisson'
 }
 
