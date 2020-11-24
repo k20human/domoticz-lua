@@ -12,7 +12,7 @@ local luminosite = 'Luminosité entrée'
 local days = {
 	1,
 	2,
-	3,
+	4,
 	5
 }
 
@@ -24,7 +24,7 @@ if (uservariablechanged[nut] ~= nil) then
 	local heure = Library.getCurrentHours()
 	local day = Library.getDayNumberOfWeek()
 
-	if (uservariables[nut] ~= "AWAY") and (heure == 18) and (minutes >= 15) and (minutes <= 50) and (Library.tableContains(days, day)) and tonumber(otherdevices[luminosite]) < 10 then
+	if (uservariables[nut] ~= "AWAY") and (heure == 18 || heure == 19) and (Library.tableContains(days, day)) and tonumber(otherdevices[luminosite]) < 400 then
 		commandArray[lampe] = 'On'
 	end
 end
