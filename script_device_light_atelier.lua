@@ -7,7 +7,7 @@ interrupteur = 'Interrupteur atelier'
 light = 'Lampe atelier'
 
 if devicechanged[interrupteur] then
-    print(otherdevices[interrupteur])
+    print(otherdevices[light])
 end
 
 if devicechanged[interrupteur] and otherdevices[interrupteur] == 'Click' and otherdevices[light] == 'Off' then
