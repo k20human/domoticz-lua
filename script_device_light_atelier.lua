@@ -6,7 +6,7 @@ commandArray = {}
 interrupteur = 'Interrupteur atelier'
 light = 'Lampe atelier'
 
-if devicechanged[interrupteur]
+if devicechanged[interrupteur] then
     print(otherdevices[interrupteur])
 end
 
