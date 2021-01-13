@@ -8,10 +8,10 @@ module = 'Module radiateur atelier'
 
 -- On ouvre la porte
 if devicechanged[interupteur] and otherdevices[interupteur] == 'On' then
-    Library.addToCommand(module, 'Set Level: 0')
+    Library.addToCommand(module, 'Set Level: 51')
     print('Allumage chauffage atelier')
 else
-    Library.addToCommand(module, 'Set Level: 51')
+    Library.addToCommand(module, 'Set Level: 0')
     print('Eteindre chauffage atelier')
 end
 
