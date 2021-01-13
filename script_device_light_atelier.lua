@@ -6,6 +6,9 @@ commandArray = {}
 interrupteur = 'Interrupteur atelier'
 light = 'Lampe atelier'
 
+if devicechanged[interrupteur]
+    print(otherdevices[interrupteur])
+end
 
 if devicechanged[interrupteur] and otherdevices[interrupteur] == 'Click' and otherdevices[light] == 'Off' then
     commandArray['Group:' .. light] = 'On'
