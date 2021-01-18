@@ -20,7 +20,7 @@ if ((minutes - 1) % 5 == 0) then
     local thermostatValue = tonumber(otherdevices[thermostat])
 
     if (temperature >= thermostatValue) then
-        Library.onOffDevices([radiateur], 'Off', 'mode normal')
+        Library.onOffDevices({radiateur}, 'Off', 'mode normal')
     end
 end
 
