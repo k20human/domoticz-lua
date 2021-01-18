@@ -17,7 +17,8 @@ local volume = 'Xiaomi Gateway Volume'
 local presence = {
 	'Présence rdc',
 	'Présence entrée',
-	'Présence garage'
+	'Présence garage',
+	'Présence atelier'
 }
 
 local portes = {
