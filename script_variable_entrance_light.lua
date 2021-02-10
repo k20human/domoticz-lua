@@ -24,7 +24,7 @@ if (uservariablechanged[nut] ~= nil) then
 	local heure = Library.getCurrentHours()
 	local day = Library.getDayNumberOfWeek()
 
-	if (uservariables[nut] ~= "AWAY") and (heure == 18 || heure == 19) and (Library.tableContains(days, day)) and tonumber(otherdevices[luminosite]) < 400 then
+	if (uservariables[nut] ~= "AWAY") and (heure == 18 or heure == 19) and (Library.tableContains(days, day)) and tonumber(otherdevices[luminosite]) < 400 then
 		commandArray[lampe] = 'On'
 	end
 end
